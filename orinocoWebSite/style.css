@@ -1,0 +1,53 @@
+h1, h2{
+    margin: 1em 0 2em 2em;
+}
+
+p{
+    margin-left: 15px;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(0.25turn, #E68A06, #915EFE);
+    margin: unset;
+    font-family: 'Finger Paint', cursive;
+}
+
+.content{
+    background: #F3E9F1;
+    width: 95%;
+    box-shadow: 0px 4px 18px 3px rgba(0,0,0,0.75);
+}
+
+.logoBlock{
+    display: flex;
+    justify-content: center;
+    background: #F3E9F1;
+}
+
+.logo{
+    width: 30%;
+}
+
+.produits{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #F3E9F1;
+    margin-bottom: 5em;
+}
+
+.produits > div{
+    background: white;
+    width: 18%;
+    box-shadow: 0px 3px 33px -15px rgba(0,0,0,0.75);
+    border-radius: 15px;
+}
+
+.produits > div > img{
+    width: 280px;
+    height: 180px;
+    object-fit: cover;
+}
