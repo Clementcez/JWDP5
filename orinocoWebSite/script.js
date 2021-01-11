@@ -24,6 +24,16 @@ requestNounours.onreadystatechange = function() {
             prix.innerHTML = nounours.price + " €";
             block.appendChild(prix);
 
+            //creer un bouton avec url
+            const button = document.createElement("button");
+            const lien = document.createElement("a");
+            lien.href = "produits.html?id=" + nounours._id;
+            lien.innerHTML = "Explorer moi !"
+            block.appendChild(button);
+            button.appendChild(lien);
+            console.log(nounours)
+
+
             i.appendChild(block);
         }
     }
@@ -55,6 +65,14 @@ requestCam.onreadystatechange = function() {
             const prix = document.createElement("p");
             prix.innerHTML = cameras.price + " €";
             block.appendChild(prix);
+
+            //creer un bouton avec url
+            const button = document.createElement("button");
+            const lien = document.createElement("a");
+            lien.href = "produits.html?id=" + cameras._id;
+            lien.innerHTML = "Explorer moi !"
+            block.appendChild(button);
+            button.appendChild(lien);
 
             i.appendChild(block);
         }
@@ -88,12 +106,57 @@ requestMeuble.onreadystatechange = function() {
             prix.innerHTML = furnitures.price + " €";
             block.appendChild(prix);
 
+            //creer un bouton avec url
+            const button = document.createElement("button");
+            const lien = document.createElement("a");
+            lien.href = "produits.html?id=" + furnitures._id;
+            lien.innerHTML = "Explorer moi !"
+            block.appendChild(button);
+            button.appendChild(lien);
+
             i.appendChild(block);
         }
     }
 };
 requestMeuble.open("GET", "http://localhost:3000/api/furniture");
 requestMeuble.send();
+
+// const btn = document.getElementsByTagName("button");
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    const btns = document.getElementsByTagName("button");
+
+    for (let btn of btns){
+        btn.addEventListener("click", titi);
+    };
+
+});
+
+
+function titi () {
+    const i = document.getElementById("test");
+    const truc = document.createElement("p");
+    const getUrl = "chibrax";
+    truc.innerHTML = getUrl;
+    i.appendChild(truc);
+
+    console.log("dstisyoug")
+};
+
+
+
+// const i = document.getElementById("test");
+// const truc = document.createElement("p");
+// const getUrl = "chibrax";
+// truc.innerHTML = getUrl;
+// i.appendChild(truc);
+
+
+
+
+
+
+// btn.onclick = 
 
 // const img = document.createElement("img");
 // img.src = response[0].imageUrl;

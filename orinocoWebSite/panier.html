@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+    <title>panier</title>
+</head>
+<body>
+    <section class="content">
+        <div class="logoBlock">
+            <img class="logo" src="../images/logoOrinoco.png" alt="">
+        </div>
+
+        <nav>
+            <a href="index.html">Retour à nos produits</a>
+            <a href="panier.html">Acceder au panier</a>
+        </nav>
+
+        <h1>PANIER</h1>
+        <p id="plein" class="hidden">Votre panier contient <span id="nombreArticle"></span> articles, voici un résumé:</p>
+        <p id="vide">Votre panier est vide !</p>
+        <div id="produits" class="produitsTotal">
+
+        </div>
+
+        <table border="4">
+            <tr>
+                <th>Article</th>
+                <th>couleur</th>
+                <th>Quantité</th>
+                <th>Total</th>
+            </tr>
+            <tr id="article">
+                <td>HELLO</td>
+                <td>Ronan</td>
+            </tr>
+            <tr id="couleur">
+                <td>DOE</td>
+                <td>John</td>
+            </tr>
+            <tr id="quantitéArticle">
+                <td>HELLO</td>
+                <td>Ronan</td>
+            </tr>
+            <tr id="total">
+                <td>DOE</td>
+                <td>John</td>
+            </tr>
+        </table>
+       
+    </section>
+
+    <script src="panier.js"></script>
+</body>
+</html>
