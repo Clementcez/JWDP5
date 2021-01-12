@@ -18,13 +18,25 @@
 
 window.onload = forEachKey;
 
-const generalBlock = document.getElementById("produits");
 const block = document.createElement("div");
 const numberBlock = document.getElementById("nombreArticle");
 const vide = document.getElementById("vide");
 const plein = document.getElementById("plein");
-const blockPrixTotal = document.createElement("p");
 
+const tableauArticle = document.getElementById("article");
+const tableauNom = document.getElementById("nom");
+const tableauPrix = document.getElementById("prix");
+const tableauCouleur = document.getElementById("couleur");
+const tableauQuantité = document.getElementById("quantitéArticle");
+const tableauPrixTotal = document.getElementById("total");
+const viderPanier = document.getElementById("vider");
+
+const blockPrixTotal = document.createElement("td");
+
+viderPanier.onclick = function vider(){
+    localStorage.clear();
+    location.reload();
+};
 
 let calculQantité = 0;
 let prixTotal = 0;
@@ -40,18 +52,15 @@ function forEachKey() {
             let result = calculQantité += nombre;
             numberBlock.innerHTML = result;
 
-            const blockDetails= document.createElement("div");
             //creer un p pour les noms
-            const couleur = document.createElement("p");
+            const couleur = document.createElement("td");
             couleur.innerHTML = elem.couleur;
-            blockDetails.appendChild(couleur);
+            tableauCouleur.appendChild(couleur);
 
             //creer un p pour les noms
-            const quantité = document.createElement("p");
+            const quantité = document.createElement("td");
             quantité.innerHTML = "X" + elem.quantité;
-            blockDetails.appendChild(quantité);
-
-            generalBlock.appendChild(blockDetails);
+            tableauQuantité.appendChild(quantité);
 
             if(elem.id !== undefined){
                 const requestNounours = new XMLHttpRequest();
@@ -61,31 +70,32 @@ function forEachKey() {
                         const nounours = JSON.parse(this.responseText);
             
                         //creer un p pour les noms
-                        const name = document.createElement("p");
+                        const name = document.createElement("td");
                         name.innerHTML = nounours.name;
-                        blockDetails.appendChild(name);
+                        tableauNom.appendChild(name);
             
                         //creer une balise img pour les images
+                        const imgArticle = document.createElement("td");
                         const img = document.createElement("img");
                         img.src = nounours.imageUrl;
-                        blockDetails.appendChild(img);
+                        imgArticle.appendChild(img);
+                        tableauArticle.appendChild(imgArticle);
             
                         //creer un p pour les prix
-                        const prix = document.createElement("p");
+                        const prix = document.createElement("td");
                         prix.innerHTML = nounours.price + " €";
-                        blockDetails.appendChild(prix);
+                        tableauPrix.appendChild(prix);
                         
                         //calcul + creer un p pour le pix total
                         let prixSpec = Number (nounours.price);
                         let calculPrixTotal = prixSpec * elem.quantité;
                         prixTotal += calculPrixTotal;
-                        blockPrixTotal.innerHTML = "Pour un total de " + prixTotal + "€";
-                        
-                        generalBlock.appendChild(blockDetails);
-                        generalBlock.appendChild(blockPrixTotal);
+                        blockPrixTotal.innerHTML = prixTotal + "€";
+                        tableauPrixTotal.appendChild(blockPrixTotal);
 
                         plein.classList.remove("hidden");
                         vide.classList.add("hidden");
+                        viderPanier.classList.remove("hidden");
                     }    
                 };
                 requestNounours.open("GET", "http://localhost:3000/api/teddies/" + elem.id);
@@ -94,3 +104,10 @@ function forEachKey() {
         }
     }
 }
+
+const buttonForm = document.getElementById("buttonForm");
+
+buttonForm.onclick = function verification(){
+    const form = document.getElementById("formulaire");
+    console.log(form)
+};
