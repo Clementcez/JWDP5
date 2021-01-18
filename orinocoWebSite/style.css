@@ -257,6 +257,8 @@ form {
 .conf > div > img{
     width: 50%;
     object-fit: cover;
+    margin-bottom: 2em;
+    border-radius: 10px;
 }
 
 .conf > div > div{
