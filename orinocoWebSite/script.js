@@ -21,7 +21,7 @@ requestNounours.onreadystatechange = function() {
 
             //creer un p pour les prix
             const prix = document.createElement("p");
-            prix.innerHTML = nounours.price + " €";
+            prix.innerHTML = nounours.price / 100 + " €";
             block.appendChild(prix);
 
             //creer un bouton avec url
@@ -63,7 +63,7 @@ requestCam.onreadystatechange = function() {
 
             //creer un p pour les prix
             const prix = document.createElement("p");
-            prix.innerHTML = cameras.price + " €";
+            prix.innerHTML = cameras.price / 100 + " €";
             block.appendChild(prix);
 
             //creer un bouton avec url
@@ -103,7 +103,7 @@ requestMeuble.onreadystatechange = function() {
 
             //creer un p pour les prix
             const prix = document.createElement("p");
-            prix.innerHTML = furnitures.price + " €";
+            prix.innerHTML = furnitures.price / 100 + " €";
             block.appendChild(prix);
 
             //creer un bouton avec url

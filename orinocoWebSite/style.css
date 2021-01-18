@@ -147,6 +147,13 @@ nav{
     margin-left: 1em;
 }
 
+.vide{
+    border: solid 2px;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px;
+}
+
 .tab{
     overflow-x: scroll;
     margin-bottom: 1em;
@@ -172,7 +179,7 @@ td{
 }
 
 form {
-    margin: 0 auto 3em auto;
+    margin: 0 auto 0 auto;
     width: 500px;
     padding: 1em;
     border: 1px solid #CCC;
@@ -206,6 +213,52 @@ form {
   }
   
   .button {
-    padding-left: 90px; 
-    margin-left: 5em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5em;
+
   }
+
+  /* validation */
+
+  .msg{
+      margin: 3em;
+      border: solid 3px;
+      border-radius: 15px;
+      background-color: white;
+      box-shadow: 0px 3px 33px -15px rgba(0,0,0,0.75);
+      padding: 1em;
+  }
+
+  #numbCom{
+      padding: 10px;
+      border: solid 2px;
+      border-radius: 10px;
+  }
+
+.conf{
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+    margin: 3em 0 5em 0;
+}
+
+.conf > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    width: 25%;
+    box-shadow: 0px 3px 33px -15px rgba(0,0,0,0.75);
+    border-radius: 1em;
+    margin: 2em;
+}
+
+.conf > div > img{
+    width: 50%;
+    object-fit: cover;
+}
+
+.conf > div > div{
+    display: flex;
+}

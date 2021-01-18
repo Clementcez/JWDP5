@@ -20,8 +20,13 @@
         </nav>
 
         <h1>PANIER</h1>
-        <p id="plein" class="hidden">Votre panier contient <span id="nombreArticle"></span> articles, voici un résumé:</p>
-        <p id="vide">Votre panier est vide !</p>
+        <div id="plein" class="hidden">
+            <p>Votre panier contient <span id="nombreArticle"></span> articles, voici un résumé:</p>
+        </div>
+        <div id="vide">
+            <p class="vide">Votre panier est vide !</p>
+        </div>
+
         <button id="vider" class="hidden">Vider le panier !</button>
 
         <div class="tab">
@@ -47,14 +52,14 @@
             </table>
         </div>
 
-        <form id="formulaire" method="post">
+        <form action="" id="formulaire" method="post">
             <div>
                 <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="name" pattern="[a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
+                <input title="ne doit pas contenir de caracteres speciaux ni de chiffres" type="text" id="prenom" name="name" pattern="[a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
             </div>
             <div>
                 <label for="name">Nom :</label>
-                <input type="text" id="name" name="user_name" pattern="[a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
+                <input title="ne doit pas contenir de caracteres speciaux ni de chiffres" type="text" id="name" name="user_name" pattern="[a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
             </div>
             <div>
                 <label for="phone">Telephone :</label>
@@ -62,20 +67,20 @@
             </div>
             <div>
                 <label for="adress">Adresse :</label>
-                <input type="text" id="adress" name="adresse" pattern="[0-9a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
+                <input title="ne doit pas contenir de caracteres speciaux" type="text" id="adress" name="adresse" pattern="[0-9a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
             </div>
             <div>
                 <label for="ville">Ville :</label>
-                <input type="text" id="ville" name="ville" pattern="[0-9a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
+                <input title="ne doit pas contenir de caracteres speciaux" type="text" id="ville" name="ville" pattern="[0-9a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
             </div>
             <div>
                 <label for="mail">E-mail :</label>
-                <input type="email" id="mail" name="user_email" required/>
-            </div>
-            <div class="button" id="buttonForm">
-                <button type="submit">Passer commande</button>
+                <input title="----@----.fr" type="email" id="mail" name="user_email" required/>
             </div>
         </form>
+        <div class="button" id="buttonForm">
+            <button type="submit">Passer commande</button>
+        </div>
        
     </section>
 

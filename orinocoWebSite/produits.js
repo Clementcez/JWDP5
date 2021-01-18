@@ -34,7 +34,7 @@ requestNounours.onreadystatechange = function() {
 
         //creer un p pour le prix
         const prix = document.createElement("p");
-        prix.innerHTML = nounours.price + " €";
+        prix.innerHTML = nounours.price / 100 + " €";
         block.appendChild(prix);
 
         //creer un p pour la decription
