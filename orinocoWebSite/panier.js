@@ -177,7 +177,7 @@ buttonForm.onclick = function verification(){
 };
 
 //fonction envoi au serveur
-function envoiServeur(formPrenom, formNom, formTel, formAdress, formVille, formMail){
+function envoiServeur(prenom, nom, tel, adress, ville, mail){
 
     //variable contenant un tableau des id recuperé dans local storage
     let ids = [];
@@ -192,12 +192,12 @@ function envoiServeur(formPrenom, formNom, formTel, formAdress, formVille, formM
         if(i === localStorage.length - 1){
             const objectCommande = {
                 contact: {
-                    firstName: formPrenom.value,
-                    lastName: formNom.value,
-                    phone: formTel.value,
-                    address: formAdress.value,
-                    email: formMail.value,
-                    city: formVille.value
+                    firstName: prenom.value,
+                    lastName: nom.value,
+                    phone: tel.value,
+                    address: adress.value,
+                    email: mail.value,
+                    city: ville.value
                 },
                 products: ids
             }
