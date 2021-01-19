@@ -80,8 +80,7 @@ function ajoutAuPanier(){
     if (contenuDuPanier === null){
         window.localStorage.setItem(url.get('id'), JSON.stringify(commande));
     }
-
-    //verifie si une couleur correspond 
+    //sinon si une couleur correspond 
     else if (isInTheCart(contenuDuPanier, couleurTest)){
 
         //boucle dans le panier, recupere le quantité de base et 
@@ -94,11 +93,13 @@ function ajoutAuPanier(){
             //verifie chaque couleur du panier et ajoute le resultat précédent au nombre d'article correspondant 
             if(elem.couleur === couleurTest){
                 elem.quantité = result + "";
+                console.log(result)
                 window.localStorage.setItem(url.get('id'), JSON.stringify(contenuDuPanier));
             }
         }
 
     }else{
+        //sinon creer un nouvel objet prenant les nouvelle valeurs et les ajoutes au tableau commande de base
         commande = { couleur: color.value, quantité: amountItem.value, id: urlId };
         contenuDuPanier.push(commande)
 

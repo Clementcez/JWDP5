@@ -52,7 +52,7 @@
             </table>
         </div>
 
-        <form action="" id="formulaire" method="post">
+        <form id="formulaire">
             <div>
                 <label for="prenom">Prénom :</label>
                 <input title="ne doit pas contenir de caracteres speciaux ni de chiffres" type="text" id="prenom" name="name" pattern="[a-zA-Z\-\s]{1,99}" minlength="1" maxlength="99" required/>
@@ -77,10 +77,8 @@
                 <label for="mail">E-mail :</label>
                 <input title="----@----.fr" type="email" id="mail" name="user_email" required/>
             </div>
-        </form>
-        <div class="button" id="buttonForm">
-            <button type="submit">Passer commande</button>
-        </div>
+                <button type="submit" class="button" onclick="testHtml()">Commander</button>
+            </form>
        
     </section>
 

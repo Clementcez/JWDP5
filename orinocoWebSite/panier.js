@@ -89,9 +89,19 @@ function forEachKey() {
     }
 }
 
-const buttonForm = document.getElementById("buttonForm");
+function testHtml() {
+    const form = document.getElementById("formulaire");
+    if (!form.checkValidity()) {
+        alert('Oups! Formulaire non valide');
+    } else {
+        verification()
+    } 
+  } 
 
-buttonForm.onclick = function verification(){
+function verification(){
+    //empeche la redirection automatique du formulaire html
+    event.preventDefault();
+
     const formPrenom = document.getElementById("prenom");
     const formNom = document.getElementById("name");
     const formTel = document.getElementById("phone");
@@ -117,19 +127,29 @@ buttonForm.onclick = function verification(){
         alert('Oups! Quelque chose s\'est mal passé.');
         return
     }
+    else if(formPrenom.value.replace(/\ /g, "") === ""){
+        alert('Oups! Formulaire non valide');
+        return  
+    }
     else{
         valide ++;
     }
 
+    //test nom
     if(regexDigit.test(formNom.value.replace(/\ /g, "")) === true || regexSpec.test(formNom.value.replace(/\ /g, "")) === true){
         console.error("Pas cool d'éssayer de hacker, 'FBI OPEN UP'... ;D");
         alert('Oups! Quelque chose s\'est mal passé.');
         return
     }
+    else if(formNom.value.replace(/\ /g, "") === ""){
+        alert('Oups! Formulaire non valide');
+        return  
+    }
     else{
         valide ++;
     }
 
+    //test tel
     if(regexLettre.test(formTel.value.replace(/\ /g, "")) === true || regexSpec.test(formTel.value.replace(/\ /g, "")) === true || formTel.value.length > 10) {
         console.error("Pas cool d'éssayer de hacker, 'FBI OPEN UP'... ;D");
         alert('Oups! Quelque chose s\'est mal passé.');
@@ -139,24 +159,35 @@ buttonForm.onclick = function verification(){
         valide ++;
     }
 
+    //test adress
     if(regexSpec.test(formAdress.value.replace(/\ /g, ""))){
         console.error("Pas cool d'éssayer de hacker, 'FBI OPEN UP'... ;D");
         alert('Oups! Quelque chose s\'est mal passé.');
         return
     }
+    else if(formAdress.value.replace(/\ /g, "") === ""){
+        alert('Oups! Formulaire non valide');
+        return  
+    }
     else{
         valide ++;
     }
 
+    //test ville
     if(regexSpec.test(formVille.value.replace(/\ /g, ""))){
         console.error("Pas cool d'éssayer de hacker, 'FBI OPEN UP'... ;D");
         alert('Oups! Quelque chose s\'est mal passé.');
         return
     }
+    else if(formVille.value.replace(/\ /g, "") === ""){
+        alert('Oups! Formulaire non valide');
+        return  
+    }
     else{
         valide ++;
     }
 
+    //test mail
     if(regexMail.test(formMail.value) === true){
         valide ++;
     }

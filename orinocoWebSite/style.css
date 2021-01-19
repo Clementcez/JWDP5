@@ -184,6 +184,7 @@ form {
     padding: 1em;
     border: 1px solid #CCC;
     border-radius: 1em;
+    margin-bottom: 5em;
   }
   
   form div + div {
@@ -213,9 +214,7 @@ form {
   }
   
   .button {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 5em;
+    margin: 2em 0em 1em 8em;
 
   }
 
